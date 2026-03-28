@@ -1,0 +1,4 @@
+# Optional metadata enrichment for file classification.
+# Windows uses python-magic-bin, while Linux/macOS use python-magic.
+python-magic-bin==0.4.14; platform_system == "Windows"
+python-magic>=0.4.27; platform_system != "Windows"

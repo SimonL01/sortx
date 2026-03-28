@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+
+import sys
+from pathlib import Path
+
+
+def _bootstrap() -> None:
+    project_parent = Path(__file__).resolve().parent.parent
+    if str(project_parent) not in sys.path:
+        sys.path.insert(0, str(project_parent))
+
+
+def main() -> int:
+    _bootstrap()
+    from sortx.cli import main as cli_main
+
+    return cli_main()
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
